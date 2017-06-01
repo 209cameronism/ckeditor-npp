@@ -26,7 +26,7 @@ gem 'ckeditor'
 or if you'd like to use the latest version from Github:
 
 ```
-gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'ckeditor', github: '209cameronism/ckeditor-npp'
 ```
 
 The last version works with Rails 3.2.x is 4.1.3
