@@ -16,8 +16,8 @@ class Ckeditor::PicturesController < Ckeditor::ApplicationController
   end
   
   def download
-    picture = CKeditor.picture_adapter.find(params[:id])
-    send_file "#{Rails.root}/#{picture.url}"
+    @picture = CKeditor.picture_adapter.find(params[:id])
+    send_file "#{Rails.root}/#{@picture.url}"
   end  
   
   def destroy
