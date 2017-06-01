@@ -14,7 +14,12 @@ class Ckeditor::PicturesController < Ckeditor::ApplicationController
     @picture = Ckeditor.picture_model.new
     respond_with_asset(@picture)
   end
-
+  
+  def download_ck_pic
+    picture = CKeditor.picture_adapter.find(params[:id])
+    send_file "#{Rails.root}/#{picture.url}"
+  end  
+  
   def destroy
     @picture.destroy
 
