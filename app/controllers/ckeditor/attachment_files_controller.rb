@@ -16,7 +16,7 @@ class Ckeditor::AttachmentFilesController < Ckeditor::ApplicationController
   end
   
   def download_ck_att
-    attachement = CKeditor.attachment_file_adapter.get!(params[:id])
+    attachment = CKeditor.attachment_file_adapter.get!(params[:id])
     send_file "#{Rails.root}/#{attachment.url}"
   end  
   
