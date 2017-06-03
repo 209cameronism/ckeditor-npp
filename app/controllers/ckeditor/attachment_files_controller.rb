@@ -14,7 +14,12 @@ class Ckeditor::AttachmentFilesController < Ckeditor::ApplicationController
     @attachment = Ckeditor.attachment_file_model.new
     respond_with_asset(@attachment)
   end
-
+  
+  def download_ck_att
+    attachement = CKeditor.attachment_file_adapter.get!(params[:id])
+    send_file "#{Rails.root}/#{attachment.url}"
+  end  
+  
   def destroy
     @attachment.destroy
 
